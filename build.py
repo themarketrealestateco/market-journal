@@ -122,6 +122,7 @@ def page(title, desc, path, body, ld=None, og_type="website"):
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">
+<meta name="google-site-verification" content="9Ub4E2Gzt6CI8lw_ConNN-08atLKdiKvJt9A03Navzc" />
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc, quote=True)}">
 <link rel="canonical" href="{url}">
