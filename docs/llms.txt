@@ -1,0 +1,9 @@
+# The Market Journal
+
+> Real estate insights from Steven Smith and Team Smith at The Market Real Estate Co. (Baton Rouge, LA; licensed in Louisiana and Alabama).
+
+## Posts
+
+- [How to Choose a Real Estate Team (Anywhere in the Country)](https://themarketrealestateco.github.io/market-journal/posts/how-to-choose-a-real-estate-team/): Production, reviews, and fees all matter, but the real test is what happens after you say yes. Here are the questions worth asking.
+- [How AI Search Is Changing the Way People Find a Real Estate Agent](https://themarketrealestateco.github.io/market-journal/posts/ai-search-and-your-next-agent/): More buyers and sellers are asking AI assistants who to call. Here's what that means for consumers and for agents.
+- [The 5 Questions Every Seller Asks First](https://themarketrealestateco.github.io/market-journal/posts/what-sellers-ask-first/): What's my home worth, how long will it take, and what do I need to fix? Straight answers to the questions we hear most.

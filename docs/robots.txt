@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://themarketrealestateco.github.io/market-journal/sitemap.xml
