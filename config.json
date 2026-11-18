@@ -1,5 +1,7 @@
 {
-  "site_url": "https://themarketrealestateco.github.io/market-journal",
-  "custom_domain": "",
-  "same_as": ["https://www.youtube.com/@your225market"]
+  "site_url": "https://marketjournalrealestate.com",
+  "custom_domain": "marketjournalrealestate.com",
+  "same_as": [
+    "https://www.youtube.com/@your225market"
+  ]
 }

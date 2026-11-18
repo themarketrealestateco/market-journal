@@ -121,6 +121,7 @@ def page(title, desc, path, body, ld=None, og_type="website"):
     return f"""<!DOCTYPE html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
 <title>{html.escape(title)}</title>
 <meta name="description" content="{html.escape(desc, quote=True)}">
 <link rel="canonical" href="{url}">
@@ -154,7 +155,7 @@ Office: (225) 953-8889</p>
 CTA = """<div class="cta"><h3>Questions about buying, selling, or joining the team?</h3>
 <p>Call or text Steven Smith: (225) 413-3376</p>
 <p class="dim">The Market Real Estate Co. office: (225) 953-8889</p>
-<p style="margin-top:10px">Team Smith | Experience Results</p></div>"""
+</div>"""
 
 
 def card(p):
