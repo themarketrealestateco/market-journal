@@ -136,6 +136,7 @@ def page(title, desc, path, body, ld=None, og_type="website"):
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{BASE}/assets/style.css">
 {ld_json}
+<script data-goatcounter="https://marketjournal.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head><body>
 <header><div class="nav">
 <a class="brand" href="{BASE}/">The Market Journal<small>Team Smith · The Market Real Estate Co.</small></a>
