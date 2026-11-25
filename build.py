@@ -260,7 +260,8 @@ def main():
     # sitemap / rss / robots / llms.txt
     urls = [("/", max([p["d"] for p in posts], default=TODAY))] + [("/about/", TODAY), ("/contact/", TODAY)] + \
            [(f"/category/{slugify(c)}/", max(p["d"] for p in posts if p["category"] == c)) for c in cats] + \
-           [(f"/posts/{p['slug']}/", p["d"]) for p in posts]
+           [(f"/posts/{p['slug']}/", p["d"]) for p in posts] + \
+           [(f"/{pg.stem}/", TODAY) for pg in sorted((ROOT / "src" / "pages").glob("*.html"))]
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
           "".join(f"<url><loc>{SITE}{u}</loc><lastmod>{d.isoformat()}</lastmod></url>\n" for u, d in urls) + "</urlset>\n")
     items = "".join(f"<item><title>{html.escape(p['title'])}</title><link>{SITE}/posts/{p['slug']}/</link>"
@@ -271,7 +272,8 @@ def main():
     write("robots.txt", f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
     write("llms.txt", "# The Market Journal\n\n> Real estate insights from Steven Smith and Team Smith at The Market Real Estate Co. "
           "(Baton Rouge, LA; licensed in Louisiana and Alabama).\n\n## Posts\n\n" +
-          "".join(f"- [{p['title']}]({SITE}/posts/{p['slug']}/): {p['summary']}\n" for p in posts))
+          "".join(f"- [{p['title']}]({SITE}/posts/{p['slug']}/): {p['summary']}\n" for p in posts) +
+          "\n## Guides\n\n- [Home Guide: Buying and Selling in Louisiana and Alabama](" + SITE + "/home-guide/)\n- [Free Home Guides](" + SITE + "/start/)\n")
     print(f"Built {len(posts)} posts into docs/ ({SITE})")
 
 
