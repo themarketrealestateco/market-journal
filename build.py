@@ -203,6 +203,12 @@ def main():
         shutil.rmtree(OUT)
     (OUT / "assets").mkdir(parents=True)
     shutil.copy(ROOT / "src" / "style.css", OUT / "assets" / "style.css")
+    # extra static assets (e.g. logos) and standalone pages: src/assets/* -> docs/assets/, src/pages/<slug>.html -> docs/<slug>/index.html
+    for a in sorted((ROOT / "src" / "assets").glob("*")):
+        if a.is_file():
+            shutil.copy(a, OUT / "assets" / a.name)
+    for pg in sorted((ROOT / "src" / "pages").glob("*.html")):
+        write(f"{pg.stem}/index.html", pg.read_text())
     write(".nojekyll", "")
     if CFG.get("custom_domain"):
         write("CNAME", CFG["custom_domain"])
