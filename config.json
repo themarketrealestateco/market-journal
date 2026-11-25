@@ -3,8 +3,5 @@
   "custom_domain": "marketjournalrealestate.com",
   "same_as": [
     "https://www.youtube.com/@your225market"
-  ],
-  "redirects": {
-    "start": "https://claude.ai/artifact/BndwDuFyAp4X2Kc5Bm48aT"
-  }
+  ]
 }
