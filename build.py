@@ -239,6 +239,15 @@ def main():
 <p>Call or text Steven Smith: (225) 413-3376</p><p>The Market Real Estate Co. office: (225) 953-8889</p>
 <p>Baton Rouge: 4983 Bluebonnet Boulevard, Suite A, Baton Rouge, LA 70809<br>Alabama: 21036 State Highway 181, Suite 102C, Fairhope, AL 36532</p></article>""".format(b=BASE)
     write("contact/index.html", page("Contact | The Market Journal", "Contact Steven Smith and Team Smith at The Market Real Estate Co.", "/contact/", contact))
+    # short redirect links for bio links, e.g. /start/ (config.json "redirects"); not in sitemap, noindex
+    for slug, target in CFG.get("redirects", {}).items():
+        t = html.escape(target, quote=True)
+        write(f"{slug.strip('/')}/index.html",
+              f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Team Smith | Experience Results</title>'
+              f'<meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url={t}">'
+              f'<link rel="canonical" href="{t}"><meta name="viewport" content="width=device-width,initial-scale=1">'
+              f'<script>location.replace("{t}")</script></head>'
+              f'<body><p><a href="{t}">Continue to Team Smith | Experience Results</a></p></body></html>')
     write("404.html", page("Page not found | The Market Journal", "Page not found", "/404.html",
           f'<article><h1>That page moved or doesn\'t exist.</h1><p><a href="{BASE}/">Back to The Market Journal</a></p></article>'))
 
